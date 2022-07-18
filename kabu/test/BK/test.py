@@ -2,11 +2,11 @@ import investpy
 import os,csv
 import time
 
-s_code = "1375"
+s_code = "7164"
 
 # 各種株価データを取得する(3番目のパラメータ： json=true)
-#data = investpy.get_stock_information(s_code,'japan',True)
-#print(data)
+data = investpy.get_stock_information(s_code,'japan',True)
+print(data)
 
 # 財務諸表(PL)の取得
 pl_data = investpy.stocks.get_stock_financial_summary(s_code, 'japan',

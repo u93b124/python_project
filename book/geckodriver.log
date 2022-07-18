@@ -1,0 +1,170 @@
+1647425072892	geckodriver	INFO	Listening on 127.0.0.1:48725
+1647425073394	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "49401" "-no-remote" "-profile" "/tmp/rust_mozprofileJO7KgL"
+*** You are running in headless mode.
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL initialize failed
+1647425073841	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileJO7KgL/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49401/devtools/browser/1145c6eb-6100-4e44-8b76-cb1e3f8e398e
+1647425076608	Marionette	INFO	Listening on port 46687
+1647425076678	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1647425083015	Marionette	INFO	Stopped listening on port 46687
+1647425140925	geckodriver	INFO	Listening on 127.0.0.1:57033
+1647425141431	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "52555" "-no-remote" "-profile" "/tmp/rust_mozprofileHxauml"
+*** You are running in headless mode.
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL initialize failed
+1647425141910	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileHxauml/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52555/devtools/browser/dbd98bf9-987d-4945-a0a1-8c870028cebb
+1647425144313	Marionette	INFO	Listening on port 38467
+1647425144413	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1647425151757	Marionette	INFO	Stopped listening on port 38467
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Reply_DiscardBrowsingContext) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Reply_DiscardBrowsingContext) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Reply_DiscardBrowsingContext) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Reply_DiscardBrowsingContext) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Msg_DestroyBrowsingContextGroup) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Reply_DiscardBrowsingContext) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+1647425302673	geckodriver	INFO	Listening on 127.0.0.1:33619
+1647425303178	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "54371" "-no-remote" "-profile" "/tmp/rust_mozprofileHeg30f"
+*** You are running in headless mode.
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL initialize failed
+1647425303637	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileHeg30f/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54371/devtools/browser/cedc4822-4407-4d36-b773-779220eea6ac
+1647425306381	Marionette	INFO	Listening on port 34429
+1647425306456	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1647425409486	geckodriver	INFO	Listening on 127.0.0.1:39485
+1647425409994	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "40365" "-no-remote" "-profile" "/tmp/rust_mozprofile2sPtup"
+*** You are running in headless mode.
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL initialize failed
+1647425410550	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile2sPtup/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:40365/devtools/browser/10e0363e-020f-416f-8ae2-4cd7dba995fd
+1647425413090	Marionette	INFO	Listening on port 37983
+1647425413202	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1647426732785	geckodriver	INFO	Listening on 127.0.0.1:38717
+1647426733290	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "38117" "-no-remote" "-profile" "/tmp/rust_mozprofilew0QUAD"
+*** You are running in headless mode.
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL initialize failed
+1647426733761	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilew0QUAD/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:38117/devtools/browser/8cd3f00e-bf5b-4d11-92d8-8f98f5bc3f1e
+1647426737559	Marionette	INFO	Listening on port 39013
+1647426737627	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1647426853478	geckodriver	INFO	Listening on 127.0.0.1:42589
+1647426853999	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "35435" "-no-remote" "-profile" "/tmp/rust_mozprofileDWKqJY"
+*** You are running in headless mode.
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL initialize failed
+1647426855016	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileDWKqJY/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:35435/devtools/browser/d1fc9aea-a63f-47f3-a736-6e0d190400c4
+1647426858907	Marionette	INFO	Listening on port 36923
+1647426859063	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1647426903677	geckodriver	INFO	Listening on 127.0.0.1:42619
+1647426904181	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "53379" "-no-remote" "-profile" "/tmp/rust_mozprofile5lVILU"
+*** You are running in headless mode.
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL initialize failed
+1647426904903	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile5lVILU/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53379/devtools/browser/dffe5f26-c22a-47b5-bd24-3e767e130c29
+1647426908353	Marionette	INFO	Listening on port 42671
+1647426908581	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1647427744810	geckodriver	INFO	Listening on 127.0.0.1:60485
+1647427745317	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "39623" "-no-remote" "-profile" "/tmp/rust_mozprofilejiff1S"
+*** You are running in headless mode.
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL initialize failed
+1647427745857	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilejiff1S/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:39623/devtools/browser/e49cad0a-c9ca-4e80-a293-c3dcfef29894
+1647427748951	Marionette	INFO	Listening on port 41173
+1647427749086	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
