@@ -21,16 +21,22 @@ with open('input.csv', encoding='shift_jis') as f:
     s_code = row[0] # input.csvから取得した証券コード（出力時の補足情報として使用）
     c_name = row[1] # input.csvから取得した企業名（出力時の補足情報として使用）
 
-    # 各種株価データを取得する(3番目のパラメータ： json=true)
-    data = investpy.get_stock_information(s_code,'japan',True)
-    print(data)
-    # 財務諸表(PL)の取得
-    pl_data = investpy.stocks.get_stock_financial_summary(s_code, 'japan',
-    summary_type='income_statement', period='annual')
+    try:
+      # 各種株価データを取得する(3番目のパラメータ： json=true)
+      data = investpy.get_stock_information(s_code,'japan',True)
+      print(data)
+      # 財務諸表(PL)の取得
+      pl_data = investpy.stocks.get_stock_financial_summary(s_code, 'japan',
+      summary_type='income_statement', period='annual')
 
-    # 財務諸表(BS)の取得
-    bs_data = investpy.stocks.get_stock_financial_summary(s_code, 'japan',
-    summary_type='balance_sheet', period='annual')
+      # 財務諸表(BS)の取得
+      bs_data = investpy.stocks.get_stock_financial_summary(s_code, 'japan',
+      summary_type='balance_sheet', period='annual')
+
+    except:
+      print('-----------------------------------------------')
+      print('investpy取得エラー ' + s_code + ' ' + c_name)
+      print('-----------------------------------------------')
 
     # サーバからブロックされないよう1企業の取得毎に 1.5秒間 waitする
     time.sleep(1.5)
