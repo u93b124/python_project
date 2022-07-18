@@ -11,13 +11,25 @@ import investpy
 import os,csv
 import time
 
-csv_buf = [] # CSV出力用の2次元配列
+csv_buf     = [] # CSV出力用の2次元配列
+csv_err_buf = [] #エラーファイル用の2次元配列
+i = 0        # 処理件数表示用カウンタ
 
 # 証券コードcsvファイルを読み込み、ループしながら1行ごとに処理を行う
 with open('input.csv', encoding='shift_jis') as f:
   reader = csv.reader(f)
   header = next(reader) # ヘッダを読み飛ばす
+
+  # エラーファイルのオープン
+  err_f = open('err.csv', mode="w", newline="",encoding="utf_8_sig")
+  
   for row in reader:
+    # 処理件数の表示用
+    i = i + 1
+    print('------------------------------------------------------------')
+    print('- ' + str(i) + ' 件目')
+    print('------------------------------------------------------------')
+
     s_code = row[0] # input.csvから取得した証券コード（出力時の補足情報として使用）
     c_name = row[1] # input.csvから取得した企業名（出力時の補足情報として使用）
 
@@ -28,15 +40,18 @@ with open('input.csv', encoding='shift_jis') as f:
       # 財務諸表(PL)の取得
       pl_data = investpy.stocks.get_stock_financial_summary(s_code, 'japan',
       summary_type='income_statement', period='annual')
-
+      print(pl_data)
       # 財務諸表(BS)の取得
       bs_data = investpy.stocks.get_stock_financial_summary(s_code, 'japan',
       summary_type='balance_sheet', period='annual')
-
+      print(bs_data)
     except:
       print('-----------------------------------------------')
       print('investpy取得エラー ' + s_code + ' ' + c_name)
       print('-----------------------------------------------')
+      # エラーファイルへ書き込み
+      err_writer = csv.writer(err_f)
+      err_writer.writerow(['investpy取得エラー',s_code,c_name])  
 
     # サーバからブロックされないよう1企業の取得毎に 1.5秒間 waitする
     time.sleep(1.5)
@@ -44,8 +59,11 @@ with open('input.csv', encoding='shift_jis') as f:
     # 売上高（Total Revenue）
     total_revenue = round(pl_data.iloc[0]['Total Revenue'])
 
-    # 粗利益（Gross Profit）
-    gross_profit = round(pl_data.iloc[0]['Gross Profit'])
+    # 粗利益（Gross Profit）　6178など粗利益が存在しない企業もある
+    if pl_data.iloc[0].get('Gross Profit') == None:
+      gross_profit = '-'
+    else:  
+      gross_profit = round(pl_data.iloc[0]['Gross Profit'])
 
     # 営業利益（Operating Income）
     operation_income = round(pl_data.iloc[0]['Operating Income'])
@@ -75,7 +93,12 @@ with open('input.csv', encoding='shift_jis') as f:
     close_val = round(data['Prev. Close'])
 
     # 時価総額（Market Cap） 単位（億円）
-    market_cap = round(data['Market Cap']/100000000)
+    if 'M' in str(data['Market Cap']) :
+      # '989.75M' 等、100万円表記でデータが格納されている場合がある
+      split_data1 = data['Market Cap'].split('.')
+      market_cap = float(split_data1[0])/100
+    else:
+      market_cap = round(data['Market Cap']/100000000)
 
     # 発行済株式数（Shares Outstanding）
     shares_outstanding = round(data['Shares Outstanding'])
@@ -86,20 +109,21 @@ with open('input.csv', encoding='shift_jis') as f:
     # 配当金（Dividend）利回り（Yield）と同時に取得されるため分割する
     dividend = 0
     if data['Dividend (Yield)'] != 'N/A(N/A)':
-      split_data = data['Dividend (Yield)'].split('(')
-      dividend = float(split_data[0])
+      split_data2 = data['Dividend (Yield)'].split('(')
+      dividend = float(split_data2[0])
 
     # 配当利回り（株価÷配当金）を計算する   (100%に換算)
     dividend_yield = round(dividend /close_val * 100, 2) 
 
     # PER（P/E Ratio）
-    per = round(data['P/E Ratio'],1)
+    if data['P/E Ratio'] != '-':
+      per = round(data['P/E Ratio'],1)
 
     # 益回りを計算する
     profit_margin = round((100 / per), 1)
 
     # PBR（時価総額÷純資産）を計算する
-    pbr = round((data['Market Cap']/1000000) / total_equity, 2)
+    pbr = round((market_cap*100) / total_equity, 2)
 
     # PBRの逆数を計算する
     pbr_reciprocal = round((100 / pbr), 2)
@@ -150,4 +174,7 @@ writer.writerow(['コード', '企業名', '株価','時価総額（億）','発
 # 2次元配列を取り出し、CSVファイルへ1行ずつ書き込み
 for data in csv_buf:
     writer.writerow(data)
-f.close()    
+f.close()
+
+# エラーファイルクローズ
+err_f.close()
