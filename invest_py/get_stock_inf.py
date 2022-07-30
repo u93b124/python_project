@@ -10,6 +10,7 @@
 import investpy
 import os,csv
 import time
+import traceback
 
 csv_buf     = [] # CSV出力用の2次元配列
 csv_err_buf = [] #エラーファイル用の2次元配列
@@ -40,7 +41,7 @@ with open('input.csv', encoding='shift_jis') as f:
       # 財務諸表(PL)の取得
       pl_data = investpy.stocks.get_stock_financial_summary(s_code, 'japan',
       summary_type='income_statement', period='annual')
-      #print(pl_data)
+      print(pl_data)
       # 財務諸表(BS)の取得
       bs_data = investpy.stocks.get_stock_financial_summary(s_code, 'japan',
       summary_type='balance_sheet', period='annual')
@@ -56,7 +57,10 @@ with open('input.csv', encoding='shift_jis') as f:
         gross_profit = round(pl_data.iloc[0]['Gross Profit'])
 
       # 営業利益（Operating Income）
-      operation_income = round(pl_data.iloc[0]['Operating Income'])
+      if pl_data.iloc[0].get('Operating Income') == None:
+        operation_income = '-'
+      else:
+        operation_income = round(pl_data.iloc[0]['Operating Income'])
 
       # 当期利益（Net Income）
       net_income = round(pl_data.iloc[0]['Net Income'])
@@ -105,9 +109,8 @@ with open('input.csv', encoding='shift_jis') as f:
       # 配当利回り（株価÷配当金）を計算する   (100%に換算)
       dividend_yield = round(dividend /close_val * 100, 2) 
 
-      # PER（P/E Ratio）
-      if data['P/E Ratio'] != '-':
-        per = round(data['P/E Ratio'],1)
+      # PER（株価 ÷ EPS)
+      per = round((close_val / eps), 2)
 
       # 益回りを計算する
       profit_margin = round((100 / per), 1)
@@ -153,10 +156,12 @@ with open('input.csv', encoding='shift_jis') as f:
     except Exception as e:
       print('-----------------------------------------------')
       print('investpy取得エラー ' + s_code + ' ' + c_name)
+      print(traceback.format_exc())
       print('-----------------------------------------------')
       # エラーファイルへ書き込み
       err_writer = csv.writer(err_f)
-      err_writer.writerow(['investpy取得エラー',s_code,c_name,e])  
+      err_writer.writerow(['investpy取得エラー',s_code,c_name,e]) 
+      err_writer.writerow([traceback.format_exc()])
 
     # サーバからブロックされないよう1企業の取得毎に 1.5秒間 waitする
     time.sleep(1.5)
