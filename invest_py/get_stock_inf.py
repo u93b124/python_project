@@ -78,10 +78,16 @@ with open('input.csv', encoding='shift_jis') as f:
       equity_ratio = round(((total_equity / total_assets) * 100) , 1)
 
       # ROE（当期利益÷株主資本）を計算する (100%に換算)
-      roe = round(((net_income / total_equity) * 100 ), 1) 
+      if ( net_income > 0 )  and ( total_equity > 0 ):
+        roe = round(((net_income / total_equity) * 100 ), 1) 
+      else:
+        roe = 0
 
       # ROA（当期利益÷総資産）を計算する (100%に換算)
-      roa = round(((net_income / total_assets) * 100 ), 1) 
+      if ( net_income > 0 ) or ( total_assets > 0 ):
+        roa = round(((net_income / total_assets) * 100 ), 1) 
+      else:
+        roa = 0
 
       # 株価終値
       close_val = round(data['Prev. Close'])
@@ -119,8 +125,11 @@ with open('input.csv', encoding='shift_jis') as f:
       pbr = round((market_cap*100) / total_equity, 2)
 
       # PBRの逆数を計算する
-      pbr_reciprocal = round((100 / pbr), 2)
-
+      if pbr > 0:
+        pbr_reciprocal = round((100 / pbr), 2)
+      else:
+        pbr_reciprocal = 0
+      
       # スコア1（ROE x 益回り x 自己資本）
       score1 = round((roe * profit_margin * equity_ratio))
 
