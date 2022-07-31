@@ -17,12 +17,12 @@ csv_err_buf = [] #エラーファイル用の2次元配列
 i = 0        # 処理件数表示用カウンタ
 
 # 証券コードcsvファイルを読み込み、ループしながら1行ごとに処理を行う
-with open('input.csv', encoding='shift_jis') as f:
+with open('input/input.csv', encoding='shift_jis') as f:
   reader = csv.reader(f)
   header = next(reader) # ヘッダを読み飛ばす
 
   # エラーファイルのオープン
-  err_f = open('err.csv', mode="w", newline="",encoding="utf_8_sig")
+  err_f = open('output/err.csv', mode="w", newline="",encoding="utf_8_sig")
   
   for row in reader:
     # 処理件数の表示用
@@ -178,7 +178,7 @@ with open('input.csv', encoding='shift_jis') as f:
 #print(csv_buf)
 
 # CSVファイルを上書きモード(w)でオープン
-f = open('output.csv', mode="w", newline="",encoding="utf_8_sig")
+f = open('output/output.csv', mode="w", newline="",encoding="utf_8_sig")
 writer = csv.writer(f)
 
 # CSVヘッダの出力
