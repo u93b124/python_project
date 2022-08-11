@@ -20,7 +20,7 @@ csv_err_buf = [] #エラーファイル用の2次元配列
 i = 0        # 処理件数表示用カウンタ
 
 # 証券コードcsvファイルを読み込み、ループしながら1行ごとに処理を行う
-with open('input/input.csv', encoding='shift_jis') as f:
+with open('input/input.csv', encoding='utf-8_sig') as f:
   reader = csv.reader(f)
   header = next(reader) # ヘッダを読み飛ばす
 
