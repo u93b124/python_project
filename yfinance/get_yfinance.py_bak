@@ -1,0 +1,32 @@
+# ライブラリの読み込み
+import yfinance as yf
+
+# 証券コードを指定する
+# 日本株の場合は、証券コードの最後に'.T'を付ける
+# トヨタ7203の場合は、'7203.T'となる
+stock_code = '7203.T'
+
+# 指定の証券コードの情報を取得する
+stock_info = yf.Ticker(stock_code)
+
+# 銘柄の総合的な情報を表示する
+print(stock_info.info)
+
+
+# バランスシートを表示する
+#print(stock_info.balancesheet)
+
+# キャッシュフローを表示する
+#print(stock_info.cashflow)
+
+# 財務を表示する
+#print(stock_info.financials)
+
+# 配当を表示する
+#print(stock_info.dividends)
+
+# 収益を表示する
+#print(stock_info.earnings)
+
+# 機関投資家を表示する
+#print(stock_info.institutional_holders)
