@@ -175,12 +175,12 @@ with open('input/input.csv', encoding='shift_jis') as f:
 
     except Exception as e:
       print('-----------------------------------------------')
-      print('investpy取得エラー ' + s_code + ' ' + c_name)
+      print('yfinance取得エラー ' + s_code + ' ' + c_name)
       print(traceback.format_exc())
       print('-----------------------------------------------')
       # エラーファイルへ書き込み
       err_writer = csv.writer(err_f)
-      err_writer.writerow(['investpy取得エラー',s_code,c_name,e]) 
+      err_writer.writerow(['yfinance取得エラー',s_code,c_name,e]) 
       err_writer.writerow([traceback.format_exc()])
 
     # サーバからブロックされないよう1企業の取得毎に 1.5秒間 waitする
