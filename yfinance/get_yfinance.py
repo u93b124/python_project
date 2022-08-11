@@ -1,3 +1,14 @@
+#
+# [yfinance ライブラリ] を用い、ヤフーファイナンスデータより各種株価データを取得し、ＣＳＶを出力する
+#
+# （準備） コマンドラインより pip install yfinance を実行し、yfinanceをインストール
+# （実行方法）コマンドラインより、python3 [当ソースファイル名] を実行する
+#
+# （input.csv）入力となる企業コード
+# （output.csv）作成されるcsvファイル
+# （err.csv）処理中にエラーが発生した企業についてはここに出力する
+
+
 # ライブラリの読み込み
 import yfinance as yf
 import os,csv
@@ -173,7 +184,7 @@ with open('input/input.csv', encoding='shift_jis') as f:
       err_writer.writerow([traceback.format_exc()])
 
     # サーバからブロックされないよう1企業の取得毎に 1.5秒間 waitする
-    #time.sleep(1.5)
+    time.sleep(1.5)
    
 #print(csv_buf)
 
